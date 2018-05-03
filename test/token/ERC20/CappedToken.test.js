@@ -24,7 +24,7 @@ contract('Capped', function (accounts) {
     assert.equal(result.logs[0].event, 'Mint');
   });
 
-  it('should fail to mint if the ammount exceeds the cap', async function () {
+  it('should fail to mint if the amount exceeds the cap', async function () {
     await token.mint(accounts[0], cap.sub(1));
     await expectThrow(token.mint(accounts[0], 100));
   });
